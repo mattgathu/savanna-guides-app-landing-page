@@ -1,0 +1,369 @@
+/*
+  Savanna Guides landing page stylesheet
+
+  Colours, fonts and other recurrent values are defined at the top of this
+  file using CSS custom properties (variables). Changing these variables
+  allows you to quickly tweak the look and feel of the site without digging
+  through all the rules. This CSS is mobile‑first and uses simple media
+  queries to enhance the layout on larger screens.
+*/
+
+:root {
+  /* Gradient palette: adjust these to shift the overall colour scheme */
+  --primary-color: #10540d;
+  --secondary-color: #f5f5f5;
+  --accent-color: #ede7dd;
+  --gradient-start: #194d33;
+  --gradient-end: #021b0b;
+  /* Text colours */
+  --text-color: #222;
+  --light-text-color: #f7f7f7;
+  /* Font families */
+  --font-main: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Helvetica, Arial, sans-serif;
+  --font-display: 'Forta', var(--font-main);
+  /* Border radius */
+  --radius: 12px;
+}
+
+/* Custom font: Forta – loaded from external source. If the remote font cannot
+   be fetched, the fallback specified in --font-display will be used. */
+@font-face {
+  font-family: 'Forta';
+  src: url('https://savannaguides.com/assets/fonts/Forta.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Global resets */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  color: var(--text-color);
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+/* The redesigned page doesn’t include a top navigation menu, so the header
+   styles are removed. */
+
+/* Hero section */
+/* Hero (v1) styles removed for the new avant-garde design. */
+
+/* Avant-garde hero section */
+.avant-hero {
+  position: relative;
+  min-height: 90vh;
+  padding: 8rem 0 6rem;
+  color: var(--light-text-color);
+  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.15), transparent 50%),
+    linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  overflow: hidden;
+  text-align: center;
+}
+
+.avant-hero .hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.avant-hero h1 {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.avant-hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  opacity: 0.9;
+}
+
+@media (min-width: 768px) {
+  .avant-hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .avant-hero p {
+    font-size: 1.3rem;
+  }
+}
+
+/* .hero-overlay removed for the new design */
+
+.hero .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  text-align: left;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.badge {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.badge img {
+  display: block;
+  height: 50px;
+}
+
+.badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Feature list */
+.feature-list {
+  /* Use a soft gradient for the feature section to break up the dark panels */
+  background: linear-gradient(180deg, #f4f7f4, #e8f1e7);
+  padding: 5rem 0;
+}
+
+.feature-list h2 {
+  font-family: var(--font-display);
+  text-align: center;
+  font-size: 2rem;
+  margin: 0 0 3rem;
+  color: var(--primary-color);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  /* Feature cards float on a light translucent panel */
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.feature-marker {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  /* Number markers use a vibrant gradient that ties into the brand palette */
+  background: linear-gradient(135deg, var(--primary-color) 0%, #1b7921 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.feature-info h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.feature-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* App preview */
+/* App preview styles from the initial design are no longer used. */
+
+/* Video section */
+.video-section {
+  background: linear-gradient(180deg, var(--gradient-end), var(--gradient-start));
+  color: var(--light-text-color);
+  padding: 5rem 0;
+}
+
+.video-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+
+.phone-frame {
+  width: 280px;
+  height: 560px;
+  border: 4px solid rgba(255, 255, 255, 0.4);
+  border-radius: 36px;
+  padding: 0.25rem;
+  background: #000;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+}
+
+.phone-video {
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  object-fit: cover;
+  background-color: #111;
+}
+
+.video-text {
+  max-width: 480px;
+  text-align: center;
+}
+
+.video-text h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--light-text-color);
+}
+
+.video-text p {
+  font-size: 1rem;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .video-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .video-text {
+    text-align: left;
+    margin-left: 2rem;
+  }
+
+  .phone-frame {
+    width: 320px;
+    height: 640px;
+  }
+}
+
+/* Testimonials and the original call‑to‑action banner styles are not used in this redesign. */
+
+/* Final call‑to‑action */
+.cta-final {
+  background: linear-gradient(135deg, var(--gradient-start), var(--primary-color));
+  color: var(--light-text-color);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.cta-final h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin: 0 0 1rem;
+}
+
+.cta-final p {
+  margin: 0 0 2rem;
+  font-size: 1.1rem;
+}
+
+.cta-final .badge img {
+  height: 50px;
+}
+
+/* Footer */
+/* Footer for the new design */
+.site-footer {
+  background: #021b0b;
+  color: var(--light-text-color);
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.site-footer .footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .preview-grid {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .preview-image {
+    max-width: 500px;
+  }
+
+  .cta-content h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero h1 {
+    font-size: 4rem;
+  }
+}

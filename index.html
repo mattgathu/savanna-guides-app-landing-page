@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--
+  Savanna Guides mobile app landing page – avant garde redesign
+
+  This single‑page layout removes the traditional top navigation in favour of a
+  continuous scroll experience. It leverages the Forta typeface (loaded
+  remotely) to deliver a distinctive, futuristic look and employs gradient
+  backgrounds to provide visual richness without overwhelming the content. A
+  vertical video player styled as a phone presents engaging media, while a
+  comprehensive feature list highlights everything from park and trail guides
+  to rich media libraries and offline navigation.
+
+  To customise the site:
+    - Colours and fonts are defined in `style.css` via CSS variables and
+      @font‑face rules. Swap the `--primary-gradient` or update font
+      definitions to change the look.
+    - Replace `app-screenshot.png` with your own vertical poster to change
+      the video thumbnail.
+    - To embed your own video, update the `<video>` element’s `src`
+      attribute in the `.phone-video` container.
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Savanna Guides – East Africa outdoor companion</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main>
+    <!-- Hero: bold statement with gradient background -->
+    <section class="hero avant-hero">
+      <div class="container hero-content">
+        <h1>Explore East Africa</h1>
+        <p>
+          Savanna Guides is your ultimate outdoor companion, guiding you
+          through national parks, reserves and trails, even when you're
+          offline. Find places to stay, things to do and attractions to see
+          across Kenya, Rwanda, Tanzania, Uganda and beyond.
+        </p>
+        <div class="cta-buttons">
+          <a href="https://apps.apple.com/us/app/savanna-parks-guide/id6636470632" class="badge"><img
+              src="app-store-badge.svg" alt="Download on the App Store" /></a>
+          <!-- <a href="#" class="badge"><img src="google-play-badge.png" alt="Get it on Google Play" /></a> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Video player shaped like a mobile phone -->
+    <section class="video-section">
+      <div class="container video-wrapper">
+        <div class="phone-frame">
+          <video class="phone-video" src="savanna-guides-sample.mp4" poster="app-poster.png" playsinline autoplay muted
+            loop></video>
+        </div>
+        <div class="video-text">
+          <h2>Discover the savanna</h2>
+          <p>
+            Stay inspired with curated collections of featured parks,
+            trails and birds, plus upcoming events and seasonal
+            highlights.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-section">
+      <div class="container video-wrapper">
+        <div class="video-text">
+          <h2>Parks Guides</h2>
+          <p>
+            Detailed information about national parks and reserves - from
+            top attractions, accommodation and activities to wildlife and
+            navigation.
+          </p>
+        </div>
+        <div class="phone-frame">
+          <video class="phone-video" src="" poster="park.gif" playsinline autoplay muted loop></video>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="video-section">
+      <div class="container video-wrapper">
+        <div class="phone-frame">
+          <video class="phone-video" src="" poster="animals.gif" playsinline autoplay muted loop></video>
+        </div>
+        <div class="video-text">
+          <h2>Wildlife directory</h2>
+          <p>
+            Identify species on the go. Browse our encyclopaedic
+            directory of animals and birds native to the savanna.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature list -->
+    <section class="feature-list">
+      <div class="container">
+        <h2>Your all-in-one guide</h2>
+        <ul class="features">
+          <li>
+            <div class="feature-marker">1</div>
+            <div class="feature-info">
+              <h3>Parks guides</h3>
+              <p>
+                Detailed information about national parks and reserves - from
+                top attractions, accommodation and activities to wildlife and
+                navigation.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="feature-marker">2</div>
+            <div class="feature-info">
+              <h3>Trails guides</h3>
+              <p>
+                Navigate hiking and biking trails with ease. Each guide
+                includes distance, difficulty, highlights and offline maps.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="feature-marker">3</div>
+            <div class="feature-info">
+              <h3>Country info</h3>
+              <p>
+                Learn about East Africa's countries - culture, climate and
+                travel tips to make your journey smooth and enriching.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="feature-marker">4</div>
+            <div class="feature-info">
+              <h3>Wildlife directory</h3>
+              <p>
+                Identify species on the go. Browse our encyclopaedic
+                directory of animals and birds native to the savanna.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="feature-marker">5</div>
+            <div class="feature-info">
+              <h3>Discover page</h3>
+              <p>
+                Stay inspired with curated collections of featured parks,
+                trails and birds, plus upcoming events and seasonal
+                highlights.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="feature-marker">6</div>
+            <div class="feature-info">
+              <h3>Offline navigation</h3>
+              <p>
+                Download maps and guides ahead of time. Savanna Guides
+                doesn't need a signal to keep you on track.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Closing call to action -->
+    <section class="cta-final">
+      <div class="container">
+        <h2>Ready to explore?</h2>
+        <p>
+          Start your adventure today with Savanna Guides - your trusted
+          companion for East Africa's outdoors.
+        </p>
+        <div class="cta-buttons">
+          <a href="https://apps.apple.com/us/app/savanna-parks-guide/id6636470632" class="badge"><img
+              src="app-store-badge.svg" alt="Download on the App Store" /></a>
+          <!-- <a href="#" class="badge"><img src="google-play-badge.png" alt="Get it on Google Play" /></a> -->
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <p>
+          © <span id="year">2025</span> Savanna Guides. Crafted with care for
+          explorers everywhere.
+        </p>
+      </div>
+    </footer>
+  </main>
+  <script>
+    // Update copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
