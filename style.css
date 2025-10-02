@@ -1,13 +1,3 @@
-/*
-  Savanna Guides landing page stylesheet
-
-  Colours, fonts and other recurrent values are defined at the top of this
-  file using CSS custom properties (variables). Changing these variables
-  allows you to quickly tweak the look and feel of the site without digging
-  through all the rules. This CSS is mobile‑first and uses simple media
-  queries to enhance the layout on larger screens.
-*/
-
 :root {
   /* Gradient palette: adjust these to shift the overall colour scheme */
   --primary-color: #10540d;
@@ -30,7 +20,7 @@
    be fetched, the fallback specified in --font-display will be used. */
 @font-face {
   font-family: 'Forta';
-  src: url('https://savannaguides.com/assets/fonts/Forta.woff') format('woff');
+  src: url('/Forta.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -88,7 +78,7 @@ ul {
   background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.15), transparent 50%),
     linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
   overflow: hidden;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .avant-hero .hero-content {
@@ -108,7 +98,7 @@ ul {
 .avant-hero p {
   font-size: 1.2rem;
   max-width: 700px;
-  margin: 0 auto 2.5rem;
+  /* margin: 0 auto 2.5rem; */
   opacity: 0.9;
 }
 
@@ -122,34 +112,19 @@ ul {
   }
 }
 
-/* .hero-overlay removed for the new design */
-
-.hero .hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 700px;
-  text-align: left;
-}
-
-.hero h1 {
-  font-size: 2.8rem;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  line-height: 1.15;
-}
-
-.hero p {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-  max-width: 600px;
-}
-
 .cta-buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
+
+.cta-buttons-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
 
 .badge {
   display: inline-block;
