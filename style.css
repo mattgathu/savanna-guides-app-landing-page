@@ -1,10 +1,13 @@
 :root {
-  /* Gradient palette: adjust these to shift the overall colour scheme */
+  /* Gradient palette: adjusted for smooth scroll transitions */
   --primary-color: #10540d;
   --secondary-color: #f5f5f5;
   --accent-color: #ede7dd;
-  --gradient-start: #194d33;
-  --gradient-end: #021b0b;
+  /* Gradient colors - from lighter to darker */
+  --gradient-top: #1a5f36;    /* Lighter at the top */
+  --gradient-middle: #194d33; /* Mid-tone for the middle */
+  --gradient-lower: #0c3520;  /* Darker tone */
+  --gradient-bottom: #021b0b; /* Darkest at the bottom */
   /* Text colours */
   --text-color: #222;
   --light-text-color: #f7f7f7;
@@ -34,7 +37,7 @@ body {
   margin: 0;
   font-family: var(--font-main);
   color: var(--text-color);
-  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  background: linear-gradient(135deg, var(--gradient-middle), var(--gradient-bottom));
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
@@ -76,9 +79,11 @@ ul {
   padding: 8rem 0 6rem;
   color: var(--light-text-color);
   background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.15), transparent 50%),
-    linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    linear-gradient(180deg, var(--gradient-top) 0%, var(--gradient-middle) 100%);
   overflow: hidden;
   /* text-align: center; */
+  margin-bottom: -1px;
+  /* Ensure seamless transition to next section */
 }
 
 .avant-hero .hero-content {
@@ -146,9 +151,11 @@ ul {
 
 /* Feature list */
 .feature-list {
-  /* Use a soft gradient for the feature section to break up the dark panels */
-  background: linear-gradient(180deg, #f4f7f4, #e8f1e7);
+  /* Smooth transition from the dark video section to a lighter feature section */
+  background: linear-gradient(180deg, var(--gradient-bottom), var(--gradient-bottom) 5%, var(--gradient-lower) 20%, #0a2a19 40%, #154726 60%, #e8f1e7 100%);
   padding: 5rem 0;
+  margin-top: -1px;
+  /* Ensure seamless transition from previous section */
 }
 
 .feature-list h2 {
@@ -211,9 +218,22 @@ ul {
 
 /* Video section */
 .video-section {
-  background: linear-gradient(180deg, var(--gradient-end), var(--gradient-start));
   color: var(--light-text-color);
   padding: 5rem 0;
+  margin-top: -1px; /* Remove any gap between sections */
+}
+
+/* Create a smooth gradient transition between video sections */
+.video-section:nth-child(2) {
+  background: linear-gradient(180deg, var(--gradient-middle) 0%, var(--gradient-middle) 60%, var(--gradient-lower) 100%);
+}
+
+.video-section:nth-child(3) {
+  background: linear-gradient(180deg, var(--gradient-lower) 0%, var(--gradient-lower) 60%, var(--gradient-bottom) 100%);
+}
+
+.video-section:nth-child(4) {
+  background: linear-gradient(180deg, var(--gradient-bottom) 0%, var(--gradient-bottom) 70%, var(--gradient-bottom) 100%);
 }
 
 .video-wrapper {
@@ -281,10 +301,11 @@ ul {
 
 /* Final call‑to‑action */
 .cta-final {
-  background: linear-gradient(135deg, var(--gradient-start), var(--primary-color));
+  background: linear-gradient(180deg, #e8f1e7 0%, #c8e4c4 20%, var(--primary-color) 60%, var(--gradient-bottom) 100%);
   color: var(--light-text-color);
   padding: 5rem 0;
   text-align: center;
+  margin-top: -1px; /* Ensure seamless transition */
 }
 
 .cta-final h2 {
